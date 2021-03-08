@@ -32,9 +32,9 @@ class ViewController: UIViewController, UISearchBarDelegate
     
     
     let loc1 : Places = Places.init(Title: "Johar Town", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 31.4697, longitude: 74.2728), image: UIImage(named: "foodd")!, video: "", isImage: true)
-    let loc2 : Places = Places.init(Title: "Wapda Town", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 32.4697, longitude: 75.2728), image: UIImage(named: "foodd")!, video: "", isImage: false)
+    let loc2 : Places = Places.init(Title: "Wapda Town", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 32.4697, longitude: 75.2728), image: UIImage(named: "foodd")!, video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", isImage: false)
     let loc3 : Places = Places.init(Title: "DHA Phase 6", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 33.4697, longitude: 76.2728), image: UIImage(named: "foodd")!, video: "", isImage: true)
-    let loc4 : Places = Places.init(Title: "Paragon City", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 34.4697, longitude: 77.2728), image: UIImage(named: "foodd")!, video: "", isImage: false)
+    let loc4 : Places = Places.init(Title: "Paragon City", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 34.4697, longitude: 77.2728), image: UIImage(named: "foodd")!, video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", isImage: false)
     
     
     override func viewDidLoad() {
@@ -93,6 +93,7 @@ class ViewController: UIViewController, UISearchBarDelegate
         
     }
     
+    //added index parameter for places Array Index
     func openAddCreditView(modal:Places,index : Int){
         // self.backView.isHidden = false
         if modal.isImage {
@@ -103,24 +104,13 @@ class ViewController: UIViewController, UISearchBarDelegate
         addCredit.view.frame = CGRect(x: 12.5, y: view.frame.height/2-100, width: 350, height: 220)
         }
         else {
-            playVideos(index : index)
+            playVideos(Place : modal,index : index)
         }
     }
     
-    
-//    func playVideo(){
-//        let videoURL = URL(string:"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4")
-//        let player = AVPlayer(url: videoURL!)
-//        player.rate = 1
-//        let playerLayer = AVPlayerLayer(player: player)
-//        playerLayer.frame = CGRect(x: 12.5, y: view.frame.height/2-100, width: 350, height: 220)
-//        self.view.layer.addSublayer(playerLayer)
-////        player.play()
-//    }
-    
-    
-    func playVideos(index : Int){
-        let videoPath = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        
+    func playVideos(Place : Places ,index : Int){
+        let videoPath = Place.video
         guard let url = URL(string: videoPath) else { return }
         let player = AVPlayer(url: url)
     
