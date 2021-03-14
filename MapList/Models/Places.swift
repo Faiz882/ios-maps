@@ -14,12 +14,14 @@ class DataModel
     var discipline : String
     var url: String
     var isFav : Bool
+    var image : UIImage
     
-    init(title: String, discipline: String, url: String, fav: Bool) {
+    init(title: String, discipline: String, url: String, fav: Bool,image : UIImage) {
         self.title = title
         self.discipline = discipline
         self.url = url
         self.isFav = fav
+        self.image = image
     }
 }
 

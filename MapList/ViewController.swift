@@ -32,7 +32,7 @@ class ViewController: UIViewController, UISearchBarDelegate
     
     
     let loc1 : Places = Places.init(Title: "Johar Town", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 31.4697, longitude: 74.2728), image: UIImage(named: "foodd")!, video: "", isImage: true)
-    let loc2 : Places = Places.init(Title: "Wapda Town", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 32.4697, longitude: 75.2728), image: UIImage(named: "foodd")!, video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", isImage: false)
+    let loc2 : Places = Places.init(Title: "Wapda Town", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 32.4697, longitude: 75.2728), image: UIImage(named: "foodd")!, video: "https://www.youtube.com/watch?v=ERIg_GzcUT0", isImage: false)
     let loc3 : Places = Places.init(Title: "DHA Phase 6", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 33.4697, longitude: 76.2728), image: UIImage(named: "foodd")!, video: "", isImage: true)
     let loc4 : Places = Places.init(Title: "Paragon City", subTitle: "Lahore", Location: CLLocationCoordinate2D.init(latitude: 34.4697, longitude: 77.2728), image: UIImage(named: "foodd")!, video: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4", isImage: false)
     

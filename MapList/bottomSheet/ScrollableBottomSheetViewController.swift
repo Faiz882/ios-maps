@@ -44,12 +44,12 @@ class ScrollableBottomSheetViewController: UIViewController {
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(ScrollableBottomSheetViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
-        data.append(DataModel(title: "Test", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: false))
-        data.append(DataModel(title: "Test1", discipline: "Candle Shop", url: "https://www.google.com", fav: true))
-        data.append(DataModel(title: "Test2", discipline: "Candle Shop", url: "https://www.google.com", fav: false))
-        data.append(DataModel(title: "Check", discipline: "Pumpkin Patch Farm", url: "https://www.google.com", fav: false))
-        data.append(DataModel(title: "John", discipline: "Wine & Spirits", url: "https://www.google.com", fav: false))
-        data.append(DataModel(title: "Allen", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: false))
+        data.append(DataModel(title: "Test", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: false, image: UIImage(named: "img1")!))
+        data.append(DataModel(title: "Test1", discipline: "Candle Shop", url: "https://www.google.com", fav: true, image: UIImage(named: "img2")!))
+        data.append(DataModel(title: "Test2", discipline: "Candle Shop", url: "https://www.google.com", fav: false, image: UIImage(named: "img3")!))
+        data.append(DataModel(title: "Check", discipline: "Pumpkin Patch Farm", url: "https://www.google.com", fav: false, image: UIImage(named: "img1")!))
+        data.append(DataModel(title: "John", discipline: "Wine & Spirits", url: "https://www.google.com", fav: false, image: UIImage(named: "img2")!))
+        data.append(DataModel(title: "Allen", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: false, image: UIImage(named: "img3")!))
         
         self.createNameDictionary(table: tableView)
     }
@@ -83,7 +83,7 @@ class ScrollableBottomSheetViewController: UIViewController {
                 if (keyName == name) { return true }
                 return false })
             {
-                namesDictionary[name]?.append(DataModel.init(title: x.title, discipline: x.discipline, url: x.url, fav: x.isFav ))
+                namesDictionary[name]?.append(DataModel.init(title: x.title, discipline: x.discipline, url: x.url, fav: x.isFav, image: x.image))
             }
             else
             {
@@ -201,12 +201,14 @@ extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewD
       //  cell.infoButton.addTarget(self, action: #selector(infoPressed(_:)), for: .touchUpInside)
         if searchBar.text != "" {
             cell.contactName.text = filteredArray[indexPath.row].title
+            cell.contactImage.image = filteredArray[indexPath.row].image
         }
         else if (favArray.count != 0)
         {
             if (indexPath.section == 0)
             {
                     cell.contactName.text = favArray[indexPath.row].title
+                    cell.contactImage.image = favArray[indexPath.row].image
                     cell.favBtn.setImage(UIImage(named: "starIcon"), for: .normal)
                     cell.favBtn.isEnabled = false
                 
@@ -219,6 +221,7 @@ extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewD
                 
                 dicData = namesDictionary[names]?[(indexPath.row)]
                 cell.contactName.text = dicData?.title
+                cell.contactImage.image = dicData?.image
                 
                 if (dicData?.isFav ?? false)
                 {
@@ -242,6 +245,7 @@ extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewD
             if indexPath.row < namesDictionary[names]!.count {
             dicData = namesDictionary[names]?[indexPath.row]
             cell.contactName.text = dicData?.title
+            cell.contactImage.image = dicData?.image
             
             if (dicData?.isFav ?? false)
             {

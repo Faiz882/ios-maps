@@ -18,7 +18,7 @@ class ImageViewController: UIViewController {
         image.layer.cornerRadius = 6
         image.layer.borderWidth = 1
         image.layer.borderColor = UIColor.gray.cgColor
-        
+        image.image = data?.image
     }
     @IBAction func crossButton(_ sender: Any) {
         view.removeFromSuperview()
