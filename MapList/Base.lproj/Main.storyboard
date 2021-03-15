@@ -206,6 +206,109 @@
             </objects>
             <point key="canvasLocation" x="730" y="100"/>
         </scene>
+        <!--View Image View Controller-->
+        <scene sceneID="Wee-P1-uWw">
+            <objects>
+                <viewController storyboardIdentifier="ViewImageVC" id="sTD-Ir-gnA" customClass="ViewImageViewController" customModule="MapList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4U8-WM-4nS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ufv-Np-jgQ">
+                                <rect key="frame" x="300" y="64" width="84" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="SHARE " image="square.and.arrow.up" catalog="system">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBtnTapped:" destination="sTD-Ir-gnA" eventType="touchUpInside" id="Ly5-MA-eN5"/>
+                                    <action selector="shareBtnTapped:" destination="fgW-a8-KEI" eventType="touchUpInside" id="ZEf-zt-mCE"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBc-ba-aeK">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ojv-fr-2cY">
+                                        <rect key="frame" x="0.0" y="0.0" width="406" height="753"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ojv-fr-2cY" firstAttribute="leading" secondItem="gBc-ba-aeK" secondAttribute="leading" id="8dY-Y5-4Uf"/>
+                                    <constraint firstAttribute="trailing" secondItem="ojv-fr-2cY" secondAttribute="trailing" id="MhC-c6-f3Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="ojv-fr-2cY" secondAttribute="bottom" id="aoE-Cp-wc5"/>
+                                    <constraint firstItem="ojv-fr-2cY" firstAttribute="height" secondItem="gBc-ba-aeK" secondAttribute="height" multiplier="0.98044" id="dzy-5t-BYO"/>
+                                    <constraint firstItem="ojv-fr-2cY" firstAttribute="top" secondItem="gBc-ba-aeK" secondAttribute="top" id="mZb-4Y-Uvz"/>
+                                    <constraint firstItem="ojv-fr-2cY" firstAttribute="width" secondItem="gBc-ba-aeK" secondAttribute="width" multiplier="0.980676" id="zcJ-Hb-pke"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HrB-Ys-3uP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gBc-ba-aeK" firstAttribute="trailing" secondItem="HrB-Ys-3uP" secondAttribute="trailing" id="Dqq-fD-X0M"/>
+                            <constraint firstItem="HrB-Ys-3uP" firstAttribute="trailing" secondItem="Ufv-Np-jgQ" secondAttribute="trailing" constant="30" id="HVX-FK-vpy"/>
+                            <constraint firstItem="gBc-ba-aeK" firstAttribute="leading" secondItem="HrB-Ys-3uP" secondAttribute="leading" id="QDT-9U-iUX"/>
+                            <constraint firstItem="gBc-ba-aeK" firstAttribute="bottom" secondItem="HrB-Ys-3uP" secondAttribute="bottom" id="T4L-ya-OF6"/>
+                            <constraint firstItem="gBc-ba-aeK" firstAttribute="top" secondItem="HrB-Ys-3uP" secondAttribute="top" constant="50" id="gyu-ie-KuC"/>
+                            <constraint firstItem="Ufv-Np-jgQ" firstAttribute="top" secondItem="HrB-Ys-3uP" secondAttribute="top" constant="20" id="j3z-0b-ABR"/>
+                            <constraint firstItem="gBc-ba-aeK" firstAttribute="top" secondItem="Ufv-Np-jgQ" secondAttribute="bottom" constant="8" symbolic="YES" id="pxa-2q-N41"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ojv-fr-2cY" id="fDV-Vc-gYf"/>
+                        <outlet property="scrollView" destination="gBc-ba-aeK" id="bh0-fT-Dee"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6g-FW-LRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457.97101449275368" y="785.49107142857144"/>
+        </scene>
+        <!--Video PlayerVC-->
+        <scene sceneID="KyH-8y-h8X">
+            <objects>
+                <viewController storyboardIdentifier="VideoPlayerVC" id="fgW-a8-KEI" customClass="VideoPlayerVC" customModule="MapList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Obf-kx-0N5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GSh-dG-Qgw">
+                                <rect key="frame" x="0.0" y="298" width="414" height="300"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="B1n-3i-XQ6"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeA-mc-och">
+                                <rect key="frame" x="310" y="74" width="84" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="SHARE " image="square.and.arrow.up" catalog="system">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBtnTapped:" destination="fgW-a8-KEI" eventType="touchUpInside" id="5Hz-X8-YMw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Efa-YL-fdy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oeA-mc-och" firstAttribute="top" secondItem="Efa-YL-fdy" secondAttribute="top" constant="30" id="7Xy-60-KDX"/>
+                            <constraint firstItem="GSh-dG-Qgw" firstAttribute="centerY" secondItem="Obf-kx-0N5" secondAttribute="centerY" id="DPy-Dn-yDR"/>
+                            <constraint firstItem="Efa-YL-fdy" firstAttribute="trailing" secondItem="oeA-mc-och" secondAttribute="trailing" constant="20" id="IoC-Pw-IMh"/>
+                            <constraint firstItem="Efa-YL-fdy" firstAttribute="trailing" secondItem="GSh-dG-Qgw" secondAttribute="trailing" id="VbF-PU-Icf"/>
+                            <constraint firstItem="GSh-dG-Qgw" firstAttribute="leading" secondItem="Efa-YL-fdy" secondAttribute="leading" id="xlU-He-Pky"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="wbViewplayer" destination="GSh-dG-Qgw" id="uAf-4N-t4d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5g-1G-R1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="1585"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="lS1-LL-2un">
@@ -218,6 +321,7 @@
     <resources>
         <image name="contact" width="508" height="325.33334350585938"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="starUnfilled" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
