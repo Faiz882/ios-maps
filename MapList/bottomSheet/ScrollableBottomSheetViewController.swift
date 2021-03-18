@@ -272,8 +272,16 @@ extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewD
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let url = URL(string: data[indexPath.row].url){
-            UIApplication.shared.open(url)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
+            vc.url = url
+            self.present(vc, animated: true, completion: nil)
+            
+            
+//            UIApplication.shared.open(url)
         }
+        
+        
     }
     
     public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

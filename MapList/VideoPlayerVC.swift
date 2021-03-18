@@ -6,13 +6,12 @@
 //
 
 import UIKit
+import WebKit
 
 
 class VideoPlayerVC: UIViewController {
 
-    
-    @IBOutlet weak var wbViewplayer: UIWebView!
-    
+    @IBOutlet weak var wkWebViewPlayer: WKWebView!
     
     var places : Places?
     override func viewDidLoad() {
@@ -23,17 +22,12 @@ class VideoPlayerVC: UIViewController {
     
         func CreateWebViewPlayer()
         {
-            self.wbViewplayer.allowsInlineMediaPlayback = true
-            
-          
+                      
             let css = ".video-container {position:relative;padding-bottom:56.25%;height:0;overflow:hidden;} .video-container iframe, .video-container object, .video-container embed { position:absolute; top:0; left:0; width:100%; height:100%; }"
             
             let htmlString = "<html><head><style type=\"text/css\">\(css)</style></head><body><div class=\"video-container\"><iframe src=\"\(places!.video)\"?playsinline=1\"  frameborder=\"0\"></iframe></div></body></html>"
             
-            wbViewplayer.scalesPageToFit = false
-            wbViewplayer.allowsInlineMediaPlayback = true;
-            wbViewplayer.loadHTMLString(htmlString, baseURL: nil)
-            
+            wkWebViewPlayer.loadHTMLString(htmlString, baseURL: nil)
             
         }
     

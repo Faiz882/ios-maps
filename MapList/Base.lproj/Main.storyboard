@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U6g-FW-LRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457.97101449275368" y="785.49107142857144"/>
+            <point key="canvasLocation" x="-142" y="791"/>
         </scene>
         <!--Video PlayerVC-->
         <scene sceneID="KyH-8y-h8X">
@@ -272,13 +272,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="GSh-dG-Qgw">
-                                <rect key="frame" x="0.0" y="298" width="414" height="300"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="B1n-3i-XQ6"/>
-                                </constraints>
-                            </webView>
                             <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeA-mc-och">
                                 <rect key="frame" x="310" y="74" width="84" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -290,24 +283,69 @@
                                     <action selector="shareBtnTapped:" destination="fgW-a8-KEI" eventType="touchUpInside" id="5Hz-X8-YMw"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y25-Hu-JM2">
+                                <rect key="frame" x="0.0" y="298" width="414" height="300"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="dCe-hf-1Dc"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Efa-YL-fdy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oeA-mc-och" firstAttribute="top" secondItem="Efa-YL-fdy" secondAttribute="top" constant="30" id="7Xy-60-KDX"/>
-                            <constraint firstItem="GSh-dG-Qgw" firstAttribute="centerY" secondItem="Obf-kx-0N5" secondAttribute="centerY" id="DPy-Dn-yDR"/>
+                            <constraint firstItem="y25-Hu-JM2" firstAttribute="leading" secondItem="Efa-YL-fdy" secondAttribute="leading" id="H2r-fx-PwN"/>
                             <constraint firstItem="Efa-YL-fdy" firstAttribute="trailing" secondItem="oeA-mc-och" secondAttribute="trailing" constant="20" id="IoC-Pw-IMh"/>
-                            <constraint firstItem="Efa-YL-fdy" firstAttribute="trailing" secondItem="GSh-dG-Qgw" secondAttribute="trailing" id="VbF-PU-Icf"/>
-                            <constraint firstItem="GSh-dG-Qgw" firstAttribute="leading" secondItem="Efa-YL-fdy" secondAttribute="leading" id="xlU-He-Pky"/>
+                            <constraint firstItem="y25-Hu-JM2" firstAttribute="trailing" secondItem="Efa-YL-fdy" secondAttribute="trailing" id="dXh-3b-xoj"/>
+                            <constraint firstItem="y25-Hu-JM2" firstAttribute="centerY" secondItem="Obf-kx-0N5" secondAttribute="centerY" id="ipw-ZD-abJ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wbViewplayer" destination="GSh-dG-Qgw" id="uAf-4N-t4d"/>
+                        <outlet property="wkWebViewPlayer" destination="y25-Hu-JM2" id="VLG-5t-ewo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E5g-1G-R1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="1585"/>
+            <point key="canvasLocation" x="765" y="791"/>
+        </scene>
+        <!--Web ViewVC-->
+        <scene sceneID="U7Y-Tw-rxy">
+            <objects>
+                <viewController storyboardIdentifier="WebViewVC" id="F7l-1h-mj1" customClass="WebViewVC" customModule="MapList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gCz-4y-k5V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MJT-YM-Y91">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tjb-Xo-lPp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tjb-Xo-lPp" firstAttribute="trailing" secondItem="MJT-YM-Y91" secondAttribute="trailing" id="C6t-5L-XwG"/>
+                            <constraint firstItem="MJT-YM-Y91" firstAttribute="leading" secondItem="Tjb-Xo-lPp" secondAttribute="leading" id="fkJ-D0-xe8"/>
+                            <constraint firstItem="Tjb-Xo-lPp" firstAttribute="bottom" secondItem="MJT-YM-Y91" secondAttribute="bottom" id="rYd-N9-bqg"/>
+                            <constraint firstItem="MJT-YM-Y91" firstAttribute="top" secondItem="Tjb-Xo-lPp" secondAttribute="top" id="uDU-tr-fcv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="MJT-YM-Y91" id="BzA-oZ-W3f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="At4-03-5o5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="442"/>
         </scene>
     </scenes>
     <designables>
