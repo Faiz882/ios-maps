@@ -31,6 +31,10 @@ class ScrollableBottomSheetViewController: UIViewController {
    
    //Array for DataModel
    var data: [DataModel] = []
+    
+    
+    var userDefaultsData = UserDefaults.standard.object(forKey: "data")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,13 +48,14 @@ class ScrollableBottomSheetViewController: UIViewController {
         let gesture = UIPanGestureRecognizer.init(target: self, action: #selector(ScrollableBottomSheetViewController.panGesture))
         gesture.delegate = self
         view.addGestureRecognizer(gesture)
-        data.append(DataModel(title: "Test", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: false, image: UIImage(named: "img1")!))
-        data.append(DataModel(title: "Test1", discipline: "Candle Shop", url: "https://www.google.com", fav: true, image: UIImage(named: "img2")!))
-        data.append(DataModel(title: "Test2", discipline: "Candle Shop", url: "https://www.google.com", fav: false, image: UIImage(named: "img3")!))
-        data.append(DataModel(title: "Check", discipline: "Pumpkin Patch Farm", url: "https://www.google.com", fav: false, image: UIImage(named: "img1")!))
-        data.append(DataModel(title: "John", discipline: "Wine & Spirits", url: "https://www.google.com", fav: false, image: UIImage(named: "img2")!))
-        data.append(DataModel(title: "Allen", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: false, image: UIImage(named: "img3")!))
+        data.append(DataModel(title: "Test", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: UserDefaults.standard.bool(forKey: "Test"), image: UIImage(named: "img1")!))
+        data.append(DataModel(title: "Test1", discipline: "Candle Shop", url: "https://www.google.com", fav: UserDefaults.standard.bool(forKey: "Test1"), image: UIImage(named: "img2")!))
+        data.append(DataModel(title: "Test2", discipline: "Candle Shop", url: "https://www.google.com", fav: UserDefaults.standard.bool(forKey: "Test2"), image: UIImage(named: "img3")!))
+        data.append(DataModel(title: "Check", discipline: "Pumpkin Patch Farm", url: "https://www.google.com", fav: UserDefaults.standard.bool(forKey: "Check"), image: UIImage(named: "img1")!))
+        data.append(DataModel(title: "John", discipline: "Wine & Spirits", url: "https://www.google.com", fav: UserDefaults.standard.bool(forKey: "John"), image: UIImage(named: "img2")!))
+        data.append(DataModel(title: "Allen", discipline: "Tattoo Artistry", url: "https://www.google.com", fav: UserDefaults.standard.bool(forKey: "Allen"), image: UIImage(named: "img3")!))
         
+      
         self.createNameDictionary(table: tableView)
     }
     
@@ -127,12 +132,16 @@ func checkFavoriteCount(table:UITableView)
         {
             cell.favBtn.setImage(UIImage(named: "starUnfilled"), for: .normal)
             dicData?.isFav = false
+            let title = sender.value?.title
+            UserDefaults.standard.set(false, forKey: title!)
             self.checkFavoriteCount(table: self.tableView)
         }
         else
         {
             cell.favBtn.setImage(UIImage(named: "starIcon"), for: .normal)
             dicData?.isFav = true
+            let title = sender.value?.title
+            UserDefaults.standard.set(true, forKey: title!)
             self.checkFavoriteCount(table: self.tableView)
         }
     }
@@ -276,8 +285,7 @@ extension ScrollableBottomSheetViewController: UITableViewDelegate, UITableViewD
             let vc = storyboard.instantiateViewController(withIdentifier: "WebViewVC") as! WebViewVC
             vc.url = url
             self.present(vc, animated: true, completion: nil)
-            
-            
+        
 //            UIApplication.shared.open(url)
         }
         
